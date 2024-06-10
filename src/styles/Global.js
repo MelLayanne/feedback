@@ -7,9 +7,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: "Overpass", sans-serif;
   }
+
   :root {
     font-size: 62.5%;
   }
+
   body {
     font-size: 1.6rem;
     background: ${props => props.theme.homeBackground};
