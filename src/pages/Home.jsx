@@ -1,14 +1,16 @@
 import React from "react";
-import { ButtonContainer, CardContainer, IconContainer } from "./Holme.styles";
+import { ButtonContainer, CardContainer, IconContainer, ResultContainer } from "./Home.styles";
 import IconStarImg from "../assets/images/icon-star.svg";
+import thankYouImg from "../assets/images/illustration-thank-you.svg";
 
 export function Home() {
-  return (
+  let aparecerCard = true;
+
+  return aparecerCard ? (
     <CardContainer>
       <IconContainer>
         <img src={IconStarImg} alt="Ícone de estrela" />
       </IconContainer>
-
       <h1>Como foi o atendimento?</h1>
       <p>
         Conte-nos como foi nossa ajuda com sua solicitação. Agradecemos muito seu
@@ -21,8 +23,14 @@ export function Home() {
         <button>4</button>
         <button>5</button>
       </ButtonContainer>
-
       <button>Enviar</button>
+    </CardContainer>
+  ) : (
+    <CardContainer>
+      <img src={thankYouImg} alt="Imagem de agradecimento" />
+      <ResultContainer><p>Você selecionou 4 de 5</p></ResultContainer>
+      <h1>Obrigado</h1>
+      <p>Agradecemos por dedicar um momento para nos avaliar. Se precisar de mais suporte, não hesite em entrar em contato!</p>
     </CardContainer>
   );
 }
